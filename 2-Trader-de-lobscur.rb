@@ -14,7 +14,6 @@ page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 @data_prices[0]
 
 	def parse_name	
-		
 		array_of_name = []
 		@data_name.each do |crypto_name| array_of_name << {"name" => crypto_name['data-sort']	}
 			end
@@ -26,7 +25,6 @@ page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 		array_of_price = []
 		@data_prices.each do |crypto_price| array_of_price << {"price" => crypto_price['data-usd'] }
 			end
-
 		return array_of_price
 	end
 
