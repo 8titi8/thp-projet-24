@@ -10,8 +10,7 @@ def perform
 page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 @data_name = page.css("#currencies-all > tbody[2] > tr > td[2]")
 @data_prices = page.css("#currencies-all > tbody[2] > tr > td[5] > a.price")
-@data_name[0]
-@data_prices[0]
+
 
 	def parse_name	
 		array_of_name = []
@@ -27,11 +26,15 @@ page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 			end
 		return array_of_price
 	end
-
-	p parse_name.zip(parse_prices)[0..5]
-
-		
-
+	p parse_name.zip(parse_prices)
 end
 
 perform
+
+#loop do
+#  t = Time.now
+#	perform
+# sleep(t + 1 - Time.now)
+#end
+
+
